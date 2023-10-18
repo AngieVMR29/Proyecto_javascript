@@ -22,18 +22,20 @@ botones.forEach(boton => {
         }
 
 /* Funciones operacionales*/ 
-        if (boton.id === "igual") {
-            try {
-                pantalla.textContent = eval(pantalla.textContent);
-                if (pantalla.textContent === "//" || pantalla.textContent === "///") {
-                    pantalla.textContent = "¡Error!";
-                    return
+        if(boton.id === "igual"){
+            try{
+                if(pantalla.textContent.includes("//","**") || pantalla.textContent === "Error"){
+                    pantalla.textContent = "error"
+
+
+
+                }else{ pantalla.textContent = eval (pantalla.textContent);}
+                    pantalla.textContent = eval(pantalla.textContent);
                 }
-            } catch {
-                pantalla.textContent = "¡Error!";
-            }
-        
-            return;
+            catch{
+                pantalla.textContent = "error"
+                }
+                return;
         } 
 
         if (pantalla.textContent === "0" || pantalla.textContent === "¡Error!") {
